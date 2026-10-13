@@ -4,24 +4,25 @@ public class DailyPower {
 
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
-
-        // TODO
-
+        for (double price : prices) {
+            System.out.printf("%.2f NOK ", price);
+        }
     }
 
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
-
-        // TODO
-
+        for (double hour : usage) {
+            System.out.printf("%.2f kWh ", hour);
+        }
     }
 
     // c) compute power usage for a single day
     public static double computePowerUsage(double[] usage) {
-
         double sum = 0;
 
-        // TODO
+        for (double hour : usage) {
+            sum += hour;
+        }
 
         return sum;
     }
@@ -31,7 +32,9 @@ public class DailyPower {
 
         double price = 0;
 
-        // TODO
+        for (int i = 0; i < usage.length; i++) {
+            price += prices[i] * usage[i];
+        }
 
         return price;
     }
@@ -44,7 +47,9 @@ public class DailyPower {
 
         double support = 0;
 
-        // TODO
+        if (price >= THRESHOLD) {
+            support = usage*PERCENTAGE;
+        }
 
         return support;
     }
@@ -54,7 +59,9 @@ public class DailyPower {
 
         double support = 0;
 
-        // TODO
+        for (int i = 0; i < usage.length; i++) {
+            support += getSupport(usage[i], prices[i]);
+        }
 
         return support;
     }
@@ -66,12 +73,14 @@ public class DailyPower {
 
         double price = 0;
 
-        // TODO
+        for (double hour : usage) {
+            price += hour * NORGESPRIS_KWH;
+        }
 
         return price;
     }
 
-    // g) compute peak usage during a single day
+    // h) compute peak usage during a single day
     public static double findPeakUsage(double[] usage) {
 
         double temp_max = 0;
