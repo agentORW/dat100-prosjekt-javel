@@ -17,8 +17,17 @@ public class MonthMain {
         System.out.println("==============");
         System.out.println();
 
+        System.out.println("Power usage:");
+        MonthlyPower.print_PowerUsage(power_usage_month);
+        System.out.println();
+        System.out.println("Power prices:");
+        MonthlyPower.print_PowerPrices(power_prices_month);
+        System.out.println();
+        System.out.println("Total monthly power usage:");
+        System.out.printf("%.2f kWh", MonthlyPower.computePowerUsage(power_usage_month));
+
         /*
-        TODO
+
 
          Write code that tests the methods you implement in the MonthlyPower class
          Remember to teste the methods as you implement them
