@@ -29,11 +29,5 @@ public class CustomerMain {
 
         System.out.println(myCustomer.toString());
 
-        /*
-        TODO
-
-         Write code that creates a Customer object and teste the methods implemented in the class
-
-        */
     }
 }

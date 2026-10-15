@@ -1,8 +1,7 @@
 package no.hvl.dat100.javel.oppgave3;
 
 public class Customer {
-
-    // TODO - object variables (attributes)
+    
     private String name;
     private String email;
     private int customer_id;
@@ -15,7 +14,6 @@ public class Customer {
         this.agreement = agreement;
     }
 
-    // TODO - getter/setter methods for all objectvariables
     public String getName() {
         return this.name;
     }
@@ -47,8 +45,6 @@ public class Customer {
     public void setAgreement(PowerAgreementType agreement) {
         this.agreement = agreement;
     }
-
-    // TODO - toString method
 
     public String toString() {
         return "Customer number " + this.customer_id + "\n"
