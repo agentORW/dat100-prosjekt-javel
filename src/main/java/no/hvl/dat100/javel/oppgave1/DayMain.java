@@ -48,7 +48,6 @@ public class DayMain {
         System.out.println("Find peak power usage");
         System.out.println(DailyPower.findPeakUsage(powerusage_day));
 
-
         // i)
         System.out.println("Find average power usage");
         System.out.println(DailyPower.findAvgPower(powerusage_day));
@@ -57,7 +56,7 @@ public class DayMain {
         TODO
 
          Write code that tests the methods you implement in the DailyPower class
-         Remember to teste the methods as you implement them
+         Remember to test the methods as you implement them
          Remember to also to check that you get the expected results
          */
 
