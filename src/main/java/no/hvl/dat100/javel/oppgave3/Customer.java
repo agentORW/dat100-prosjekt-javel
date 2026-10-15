@@ -1,7 +1,7 @@
 package no.hvl.dat100.javel.oppgave3;
 
 public class Customer {
-    
+
     private String name;
     private String email;
     private int customer_id;
