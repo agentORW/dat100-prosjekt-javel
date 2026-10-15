@@ -15,6 +15,9 @@ public class DayMain {
         System.out.println("OPPGAVE 1");
         System.out.println("==============");
         System.out.println();
+        System.out.println("Print power prices");
+        DailyPower.printPowerPrices(powerprices_day);
+        System.out.println("Print power prices");
 
         /*
         TODO
