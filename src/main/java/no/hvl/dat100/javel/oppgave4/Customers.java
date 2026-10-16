@@ -18,7 +18,7 @@ public class Customers {
 
         int count = 0;
 
-        for (Customer customer : customers) {
+        for (Customer customer : this.customers) {
             if (customer != null) {
                 count++;
             }
@@ -31,7 +31,7 @@ public class Customers {
     public Customer getCustomer(int customer_id) {
 
         for (Customer customer : this.customers) {
-            if (customer.getCustomer_id() == customer_id) {
+            if (customer != null && customer.getCustomer_id() == customer_id) {
                 return customer;
             }
         }
@@ -43,7 +43,7 @@ public class Customers {
     public boolean addCustomer(Customer c) {
 
         for (int i = 0; i < this.customers.length; i++) {
-            if (this.customers[i] != null) {
+            if (this.customers[i] == null) {
                 this.customers[i] = c;
                 return true;
             }
@@ -56,7 +56,7 @@ public class Customers {
     public Customer removeCustomer(int customer_id) {
 
         for (int i = 0; i < this.customers.length; i++) {
-            if (this.customers[i].getCustomer_id() == customer_id) {
+            if (this.customers[i] != null && this.customers[i].getCustomer_id() == customer_id) {
                 Customer c = this.customers[i];
                 this.customers[i] = null;
                 return c;
@@ -71,9 +71,12 @@ public class Customers {
 
         Customer[] customers = new Customer[this.countNonNull()];
 
+        int i_customers = 0;
+
         for (int i = 0; i < this.customers.length; i++) {
             if (this.customers[i] != null) {
-                customers[i] = this.customers[i];
+                customers[i_customers] = this.customers[i];
+                i_customers++;
             }
         }
 
