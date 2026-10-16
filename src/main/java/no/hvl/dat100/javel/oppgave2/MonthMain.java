@@ -20,19 +20,21 @@ public class MonthMain {
         System.out.println("Power usage:");
         MonthlyPower.print_PowerUsage(power_usage_month);
         System.out.println();
+
         System.out.println("Power prices:");
         MonthlyPower.print_PowerPrices(power_prices_month);
         System.out.println();
+
         System.out.println("Total monthly power usage:");
         System.out.printf("%.2f kWh", MonthlyPower.computePowerUsage(power_usage_month));
+        System.out.println();
+        System.out.println();
 
-        /*
+        System.out.println("Exceeded monthly usage threshold for cabin: " + MonthlyPower.exceedThreshold(power_usage_month, 1000));
+        System.out.println("Exceeded monthly usage threshold for house: " + MonthlyPower.exceedThreshold(power_usage_month, 5000));
+        System.out.println();
 
-
-         Write code that tests the methods you implement in the MonthlyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
-
+        System.out.println("Monthly spotprice: ");
+        System.out.printf("%.2f NOK", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
     }
 }
