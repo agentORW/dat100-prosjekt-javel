@@ -87,11 +87,13 @@ public class MonthlyPower {
     }
 
     // g) Norgesprice for the month
-    public static double computeNorgesPrice(double[][] usage, double[][] prices) { // Jeg la til double[][] prices her fordi jeg antar at man skal ha det? Om ikke så må jeg endre på løsning i oppg 4
+    public static double computeNorgesPrice(double[][] usage) {
 
         double price = 0;
 
-        // TODO
+        for (int i = 0; i < usage.length; i++) {
+            price += DailyPower.computeNorgesPrice(usage[i]);
+        }
 
         return price;
     }

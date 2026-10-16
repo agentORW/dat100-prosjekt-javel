@@ -28,7 +28,7 @@ public class Invoice {
 
         switch (this.c.getAgreement()) {
             case PowerAgreementType.NORGESPRICE:
-                this.amount = MonthlyPower.computeNorgesPrice(usage, prices);
+                this.amount = MonthlyPower.computeNorgesPrice(usage);
                 break;
             case PowerAgreementType.POWERSUPPORT:
                 this.amount = MonthlyPower.computePowerSupport(usage, prices);
