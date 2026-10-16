@@ -1,7 +1,6 @@
 package no.hvl.dat100.javel.oppgave2;
 
 import no.hvl.dat100.javel.oppgave1.DailyPower;
-import no.hvl.dat100.javel.oppgave1.DayPowerData;
 
 public class MonthlyPower {
 
@@ -88,7 +87,7 @@ public class MonthlyPower {
     }
 
     // g) Norgesprice for the month
-    public static double computeNorgesPrice(double[][] usage) {
+    public static double computeNorgesPrice(double[][] usage, double[][] prices) { // Jeg la til double[][] prices her fordi jeg antar at man skal ha det? Om ikke så må jeg endre på løsning i oppg 4
 
         double price = 0;
 

@@ -27,7 +27,7 @@ public class CustomerMain {
         System.out.println(myCustomer.getAgreement());
         myCustomer.setAgreement(PowerAgreementType.NORGESPRICE);
 
-        System.out.println(myCustomer.toString());
+        System.out.println("My customer tostring: \n" + myCustomer);
 
     }
 }
