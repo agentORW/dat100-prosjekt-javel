@@ -48,7 +48,7 @@ public class DailyPower {
         double support = 0;
 
         if (price >= THRESHOLD) {
-            support = usage*PERCENTAGE;
+            support = (usage-THRESHOLD)*PERCENTAGE;
         }
 
         return support;
@@ -85,7 +85,9 @@ public class DailyPower {
 
         double temp_max = 0;
 
-        // TODO
+        for (double hour : usage) {
+            temp_max = Math.max(hour, temp_max);
+        }
 
         return temp_max;
     }
@@ -94,7 +96,13 @@ public class DailyPower {
 
         double average = 0;
 
-        // TODO
+        int i = 0;
+        for (double hour : usage) {
+            average += hour;
+            i++;
+        }
+
+        average /= i;
 
         return average;
     }
