@@ -73,9 +73,9 @@ public class Customers {
 
         int i_customers = 0;
 
-        for (int i = 0; i < this.customers.length; i++) {
-            if (this.customers[i] != null) {
-                customers[i_customers] = this.customers[i];
+        for (Customer customer : this.customers) {
+            if (customer != null) {
+                customers[i_customers] = customer;
                 i_customers++;
             }
         }
