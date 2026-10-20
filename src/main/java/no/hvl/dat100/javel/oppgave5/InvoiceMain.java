@@ -30,7 +30,6 @@ public class InvoiceMain {
 
         double[][][] CustomerPowerUsageDatas = {CustomerPowerUsageData.usage_month_customer1, CustomerPowerUsageData.usage_month_customer2, CustomerPowerUsageData.usage_month_customer3};
 
-
         Invoice[] invoice_list = new Invoice[size];
         Customer[] customer_list = customers.getCustomers();
         for (int i = 0; i < size; i++) {
@@ -39,7 +38,7 @@ public class InvoiceMain {
                     "October",
                     CustomerPowerUsageDatas[i],
                     MonthPowerData.powerprices_month);
-            
+
             invoice_list[i] = invoice;
         }
 
