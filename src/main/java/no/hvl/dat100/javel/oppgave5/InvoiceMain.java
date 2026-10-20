@@ -2,8 +2,10 @@ package no.hvl.dat100.javel.oppgave5;
 
 import no.hvl.dat100.javel.oppgave2.MonthlyPower;
 import no.hvl.dat100.javel.oppgave3.Customer;
+import no.hvl.dat100.javel.oppgave3.CustomerMain;
 import no.hvl.dat100.javel.oppgave3.PowerAgreementType;
 import no.hvl.dat100.javel.oppgave2.MonthPowerData;
+import no.hvl.dat100.javel.oppgave4.Customers;
 
 public class InvoiceMain {
 
@@ -14,24 +16,35 @@ public class InvoiceMain {
         System.out.println("==============");
         System.out.println();
 
+        int size = 3;
+
         Customer customer1 = new Customer("Caroline Jones", "caroline.jones@pinkplace.com", 1, PowerAgreementType.NORGESPRICE);
         Customer customer2 = new Customer("Cat", "cat@pinkplace.com", 60, PowerAgreementType.SPOTPRICE);
         Customer customer3 = new Customer("Mother", "mother.jones@pinkplace.com", 25, PowerAgreementType.POWERSUPPORT);
 
-        Invoice invoice1 = new Invoice(customer1, "October", CustomerPowerUsageData.usage_month_customer1, MonthPowerData.powerprices_month);
-        Invoice invoice2 = new Invoice(customer2, "February", CustomerPowerUsageData.usage_month_customer2, MonthPowerData.powerprices_month);
-        Invoice invoice3 = new Invoice(customer3, "December", CustomerPowerUsageData.usage_month_customer3, MonthPowerData.powerprices_month);
+        Customers customers = new Customers(size);
 
-        System.out.println("Testing invoice 1");
-        invoice1.computeAmount();
-        invoice1.printInvoice();
-        System.out.println();
+        customers.addCustomer(customer1);
+        customers.addCustomer(customer2);
+        customers.addCustomer(customer3);
+
+        double[][][] CustomerPowerUsageDatas = {CustomerPowerUsageData.usage_month_customer1, CustomerPowerUsageData.usage_month_customer2, CustomerPowerUsageData.usage_month_customer3};
+
+
+        Invoice[] invoice_list = new Invoice[size];
+        Customer[] customer_list = customers.getCustomers();
+        for (int i = 0; i < size; i++) {
+            Invoice invoice = new Invoice(
+                    customer_list[i],
+                    "October",
+                    CustomerPowerUsageDatas[i],
+                    MonthPowerData.powerprices_month);
+            
+            invoice_list[i] = invoice;
+        }
 
         System.out.println("Printing all invoices");
-        Invoice[] invoice_list = {invoice1, invoice2, invoice3};
-
         Invoices.processInvoices(invoice_list);
-
 
     }
 }
