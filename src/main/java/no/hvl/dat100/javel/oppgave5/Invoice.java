@@ -31,7 +31,7 @@ public class Invoice {
                 this.amount = MonthlyPower.computeNorgesPrice(usage);
                 break;
             case PowerAgreementType.POWERSUPPORT:
-                this.amount = MonthlyPower.computePowerSupport(usage, prices);
+                this.amount = MonthlyPower.computeSpotPrice(usage, prices)- MonthlyPower.computePowerSupport(usage, prices);
                 break;
             case PowerAgreementType.SPOTPRICE:
                 this.amount = MonthlyPower.computeSpotPrice(usage, prices);
