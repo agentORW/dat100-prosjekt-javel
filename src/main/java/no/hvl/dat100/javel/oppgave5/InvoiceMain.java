@@ -18,9 +18,9 @@ public class InvoiceMain {
 
         int size = 3;
 
-        Customer customer1 = new Customer("Caroline Jones", "caroline.jones@pinkplace.com", 1, PowerAgreementType.NORGESPRICE);
-        Customer customer2 = new Customer("Cat", "cat@pinkplace.com", 60, PowerAgreementType.SPOTPRICE);
-        Customer customer3 = new Customer("Mother", "mother.jones@pinkplace.com", 25, PowerAgreementType.POWERSUPPORT);
+        Customer customer1 = new Customer("Caroline Jones", "caroline.jones@pinkplace.com", 1, PowerAgreementType.POWERSUPPORT);
+        Customer customer2 = new Customer("Cat", "cat@pinkplace.com", 60, PowerAgreementType.NORGESPRICE);
+        Customer customer3 = new Customer("Mother", "mother.jones@pinkplace.com", 25, PowerAgreementType.SPOTPRICE);
 
         Customers customers = new Customers(size);
 

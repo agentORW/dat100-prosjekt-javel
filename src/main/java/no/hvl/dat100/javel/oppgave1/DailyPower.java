@@ -48,7 +48,7 @@ public class DailyPower {
         double support = 0;
 
         if (price >= THRESHOLD) {
-            support = (usage-THRESHOLD)*PERCENTAGE;
+            support = usage * (price-THRESHOLD)*PERCENTAGE;
         }
 
         return support;
