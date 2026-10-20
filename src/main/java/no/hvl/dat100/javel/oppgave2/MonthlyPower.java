@@ -91,8 +91,8 @@ public class MonthlyPower {
 
         double price = 0;
 
-        for (int i = 0; i < usage.length; i++) {
-            price += DailyPower.computeNorgesPrice(usage[i]);
+        for (double[] i : usage) {
+            price += DailyPower.computeNorgesPrice(i);
         }
 
         return price;

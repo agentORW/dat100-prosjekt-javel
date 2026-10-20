@@ -26,8 +26,7 @@ public class MonthMain {
         System.out.println();
 
         System.out.println("Total monthly power usage:");
-        System.out.printf("%.2f kWh", MonthlyPower.computePowerUsage(power_usage_month));
-        System.out.println();
+        System.out.printf("%.2f kWh\n", MonthlyPower.computePowerUsage(power_usage_month));
         System.out.println();
 
         System.out.println("Exceeded monthly usage threshold for cabin: " + MonthlyPower.exceedThreshold(power_usage_month, 1000));
@@ -35,6 +34,14 @@ public class MonthMain {
         System.out.println();
 
         System.out.println("Monthly spotprice: ");
-        System.out.printf("%.2f NOK", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.printf("%.2f NOK\n", MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.println();
+
+        System.out.println("Tilgjengelig strømstøtte:");
+        System.out.printf("%.2f NOK\n", MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+        System.out.println();
+
+        System.out.println("Norgespris:");
+        System.out.printf("%.2f NOK", MonthlyPower.computeNorgesPrice(power_usage_month));
     }
 }

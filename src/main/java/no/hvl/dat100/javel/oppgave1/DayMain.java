@@ -20,37 +20,45 @@ public class DayMain {
         System.out.println("Print power prices");
         DailyPower.printPowerPrices(powerprices_day);
         System.out.println();
+        System.out.println();
 
         // b)
         System.out.println("Print power usage");
         DailyPower.printPowerUsage(powerusage_day);
         System.out.println();
+        System.out.println();
 
         // c)
         System.out.println("Compute power usage");
-        System.out.println(DailyPower.computePowerUsage(powerusage_day));
+        System.out.printf("%.2f kWh\n", DailyPower.computePowerUsage(powerusage_day));
+        System.out.println();
 
         // d)
         System.out.println("Compute spot price");
-        System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.printf("%.2f NOK\n", DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.println();
 
         // e) private method, cant test
 
         // f)
         System.out.println("Compute power support");
-        System.out.println(DailyPower.computePowerSupport(powerusage_day, powerprices_day));
+        System.out.printf("%.2f NOK\n", DailyPower.computePowerSupport(powerusage_day, powerprices_day));
+        System.out.println();
 
         // g)
         System.out.println("Compute Norgespris");
-        System.out.println(DailyPower.computeNorgesPrice(powerusage_day));
+        System.out.printf("%.2f NOK\n", DailyPower.computeNorgesPrice(powerusage_day));
+        System.out.println();
 
         // h)
         System.out.println("Find peak power usage");
-        System.out.println(DailyPower.findPeakUsage(powerusage_day));
+        System.out.printf("%.2f kWh\n", DailyPower.findPeakUsage(powerusage_day));
+        System.out.println();
 
         // i)
         System.out.println("Find average power usage");
-        System.out.println(DailyPower.findAvgPower(powerusage_day));
+        System.out.printf("%.2f kWh\n", DailyPower.findAvgPower(powerusage_day));
+        System.out.println();
 
         /*
         TODO
